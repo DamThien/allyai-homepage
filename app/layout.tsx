@@ -24,6 +24,33 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          id="favicon"
+          rel="icon"
+          href="/icons/favicon-light.png"
+          type="image/png"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const match = window.matchMedia('(prefers-color-scheme: dark)');
+                const favicon = document.getElementById('favicon');
+                const setFavicon = () => {
+                  if (favicon) {
+                    favicon.href = match.matches
+                      ? '/icons/favicon-light.png'
+                      : '/icons/favicon-dark.png';
+                  }
+                };
+                setFavicon();
+                match.addEventListener('change', setFavicon);
+              })();
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
