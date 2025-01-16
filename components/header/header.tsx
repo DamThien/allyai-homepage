@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useRef } from "react";
 import { Chat } from "./chat";
 import { Navbar } from "./navbar";
+import Image from "next/image";
 
 export const LandingFormHeaderComponent = () => {
     const gradientTextRef = useRef<HTMLSpanElement>(null)
@@ -66,102 +67,47 @@ export const LandingFormHeaderComponent = () => {
     };
 
     return (
-        <div className="w-full flex justify-center">
-            <div className="container flex flex-col">
-            <div className="w-full z-10">
-                <Navbar />
+        <div className="w-full h-[100vh] max-sm:h-fit flex justify-center px-4">
+            <div className="absolute w-full h-[92vh] top-[8vh]">
+                <Image 
+                    src="/images/ai-sales-agent.jpeg" 
+                    alt="background" 
+                    className="object-cover object-top opacity-40" 
+                    layout="fill" 
+                />
             </div>
-            <div className="mx-auto mt-32 pb-16 text-left z-10">
-                <div className="grid lg:grid-cols-3 gap-10 items-center">
-                    <div className="w-full lg:col-span-2">
-                        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
-                            Ally AI -{' '}
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 transition-all duration-1000">
-                                Trợ lý AI
-                            </span>{' '}
-                            Bán hàng online
-                        </h1>
-                        <p className="max-w-full mx-auto text-gray-600 font-bold pb-10">
-                            Ally AI - Trợ lý bán hàng thông minh cho doanh nghiệp, nhà hàng và các shop online.
-                            Hỗ trợ chăm sóc khách hàng 24/7, tư vấn bán hàng, xử lý khiếu nại nhanh chóng.
-                            <br />Tích hợp đa kênh, giúp tăng trưởng doanh số vượt trội.
-                        </p>
-                        <div className="grid item-center sm:justify-center lg:justify-start sm:grid sm:grid-cols-2 gap-8">
-                            <Button
-                                className="px-6 py-6 text-xs uppercase tracking-widest font-bold text-black bg-white border-none rounded-[45px] shadow-md transition-all duration-300 ease-out hover:bg-[#6D28D9] hover:shadow-lg hover:text-white hover:-translate-y-1 active:-translate-y-[1px] focus:outline-none"
-                            >
-                                Tạo ngay trợ lý cho bạn
-                            </Button>
-                            <Button
-                                className="px-6 py-6 text-xs uppercase tracking-widest font-bold text-black bg-white border-none rounded-[45px] shadow-md transition-all duration-300 ease-out hover:bg-[#6D28D9] hover:shadow-lg hover:text-white hover:-translate-y-1 active:-translate-y-[1px] focus:outline-none hover:shadow-[0_15px_20px_rgba(156, 93, 222, 0.7)]"
-                            >
-                                Liên hệ tư vấn
-                            </Button>
+            <div className="container flex flex-col">
+                <div className="w-full z-10">
+                    <Navbar />
+                </div>
+                <div className="mx-auto mt-32 pb-16 text-left z-10">
+                    <div className="grid lg:grid-cols-3 gap-10 items-center">
+                        <div className="w-full lg:col-span-2">
+                            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
+                                Ally AI -{' '}
+                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 transition-all duration-1000">
+                                    Trợ lý AI
+                                </span>{' '}
+                                Bán hàng online
+                            </h1>
+                            <p className="max-w-full mx-auto text-gray font-bold pb-10">
+                                Ally AI - Trợ lý bán hàng thông minh cho doanh nghiệp, nhà hàng và các shop online.
+                                <br />Hỗ trợ chăm sóc khách hàng 24/7, tư vấn bán hàng, xử lý khiếu nại nhanh chóng.
+                                <br />Tích hợp đa kênh, giúp tăng trưởng doanh số vượt trội.
+                            </p>
+                            <div className="grid item-center sm:justify-center lg:justify-start sm:grid sm:grid-cols-2 gap-8">
+                                <Button
+                                    className="px-6 py-6 text-xs uppercase tracking-widest font-bold text-black bg-white border-none rounded-[45px] shadow-md transition-all duration-300 ease-out hover:bg-[#6D28D9] hover:shadow-lg hover:text-white hover:-translate-y-1 active:-translate-y-[1px] focus:outline-none"
+                                >
+                                    Tạo ngay trợ lý cho bạn
+                                </Button>
+                            </div>
                         </div>
+                        {/* <ChatInterface /> */}
+                        <Chat />
                     </div>
-                    {/* <ChatInterface /> */}
-                    <Chat />
                 </div>
             </div>
-        </div>
-            <style>
-                {`
-                    .header-container {
-                        width: 100%;
-                        height: 100%;
-                        --s: 100px; /* control the size */
-                        --c1: #f8b195;
-                        --c2: #355c7d;
-
-                        --_g: var(--c2) 6% 14%, var(--c1) 16% 24%, var(--c2) 26% 34%,
-                            var(--c1) 36% 44%, var(--c2) 46% 54%, var(--c1) 56% 64%, var(--c2) 66% 74%,
-                            var(--c1) 76% 84%, var(--c2) 86% 94%;
-                        background: radial-gradient(
-                            100% 100% at 100% 0,
-                            var(--c1) 4%,
-                            var(--_g),
-                            #0008 96%,
-                            #0000
-                            ),
-                            radial-gradient(
-                                100% 100% at 0 100%,
-                                #0000,
-                                #0008 4%,
-                                var(--_g),
-                                var(--c1) 96%
-                            )
-                            var(--c1);
-                        background-size: var(--s) var(--s);
-                    }
-
-                    .header-item {
-                        position: absolute;
-                        background-color: transparent;
-                        width: calc(var(--i) * 5vmin);
-                        aspect-ratio: 1;
-                        border-radius: 50%;
-                        border: .9vmin solid rgb(0, 200, 255);
-                        transform-style: preserve-3d;
-                        transform: rotateX(70deg) translateZ(50px);
-                        animation: my-move 3s ease-in-out calc(var(--i) * 0.08s) infinite;
-                        box-shadow: 0px 0px 15px rgb(124, 124, 124),
-                        inset 0px 0px 15px rgb(124, 124, 124);
-                    }
-
-                    @keyframes my-move {
-                        0%,
-                        100% {
-                            transform: rotateX(70deg) translateZ(50px) translateY(0px);
-                            filter: hue-rotate(0deg);
-                        }
-
-                        50% {
-                            transform: rotateX(70deg) translateZ(50px) translateY(-50vmin);
-                            filter: hue-rotate(180deg);
-                        }
-                    }
-                `}
-            </style>
         </div>
     );
 }

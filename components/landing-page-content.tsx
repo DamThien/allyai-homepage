@@ -1,7 +1,7 @@
 "use client";
 import { LandingFormHeaderComponent } from './header/header';
 import { LandingFormBodyComponent } from './body/body';
-import { LandingFormFooterComponent } from './footer';
+import { LandingFormFooterComponent } from './footer/footer';
 
 const LandingPageContent = () => {
   return (

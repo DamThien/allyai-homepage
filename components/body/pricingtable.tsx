@@ -80,9 +80,9 @@ export const PricingTable = () => {
     ]
   
     return (
-      <div className="flex flex-col px-4 w-full py-8 bg-white mt-12 item-center">
+      <div id="pricing-table" className="flex flex-col px-4 w-full py-8 bg-white mt-12 item-center">
         <div className="text-center mb-12">
-          <h1 className="w-full text-3xl font-bold text-center">Bảng giá</h1>
+          <h1 className="w-full text-4xl font-bold text-center">Bảng giá</h1>
           <div className="mt-6 inline-flex items-center rounded-full border p-1 bg-background">
             <button
               onClick={() => setBillingInterval("monthly")}

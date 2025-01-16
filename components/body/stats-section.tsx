@@ -57,7 +57,7 @@ export const StatsSection: React.FC = () => {
   
     return (
       <div className="container w-full mx-auto px-4 py-12">
-        <h1 className="text-3xl font-bold text-center mb-12">
+        <h1 className="text-4xl font-bold text-center mb-12">
           Ally AI: Giải pháp bán hàng bằng AI tốt nhất!
         </h1>
   

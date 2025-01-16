@@ -1,31 +1,108 @@
 import Image from "next/image";
-import { Menu } from 'lucide-react'
+import { Menu } from "lucide-react";
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 import { Button } from "../ui/button";
-export const Navbar = () => {
+import { useEffect } from "react";
+import { FC } from "react";
+
+export const Navbar: FC = () => {
+    const handleScrollToFeature = () => {
+        if (typeof window !== "undefined") {
+            const element = document.getElementById("features");
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            } else {
+                window.location.href = "/";
+            }
+        }
+    };
+
+    const handleScrollToPricing = () => {
+        if (typeof window !== "undefined") {
+            const element = document.getElementById("pricing-table");
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            } else {
+                window.location.href = "/";
+            }
+        }
+    };
+
+    const handleScrollToFAQ = () => {
+        if (typeof window !== "undefined") {
+            const element = document.getElementById("faq");
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            } else {
+                window.location.href = "/";
+            }
+        }
+    };
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            const { hash } = window.location;
+            const scrollToElement = (elementId: string) => {
+                const element = document.getElementById(elementId);
+                if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                }
+            };
+
+            if (hash === "#pricing-table") {
+                setTimeout(() => scrollToElement("pricing-table"), 700);
+            } else if (hash === "#features") {
+                setTimeout(() => scrollToElement("features"), 700);
+            } else if (hash === "#faq") {
+                setTimeout(() => scrollToElement("faq"), 700);
+            }
+        }
+    }, []);
+
     return (
-        <nav className="flex items-center justify-between p-4 md:mx-20 gap-8">
-            <Image className="mt-2" src="/logo/Black.svg" alt="Primary Logo" width={100} height={100} />
+        <nav className="flex items-center justify-center">
+            <div className="container self-center flex items-center justify-between py-4 gap-8">
+
+                    <Link href="/" className="text-m text-black hover:text-gray-600 hover:underline">
+            <Image
+                className="mt-2"
+                src="/logo/Black.svg"
+                alt="Primary Logo"
+                width={100}
+                height={100}
+            />
+                    </Link>
             <div className="hidden md:flex items-center gap-4">
                 <div className="flex items-center gap-6 whitespace-nowrap">
                     <Link href="/" className="text-m text-black hover:text-gray-600 hover:underline">
                         Trang chủ
                     </Link>
-                    <Link href="/" className="text-m text-black hover:text-gray-600 hover:underline">
+                    {/* Nút "Tính năng" */}
+                    <button
+                        onClick={handleScrollToFeature}
+                        className="text-m text-black hover:text-gray-600 hover:underline"
+                    >
                         Tính năng
-                    </Link>
-                    <Link href="/" className="text-m text-black hover:text-gray-600 hover:underline">
+                    </button>
+                    {/* Nút "Bảng giá" */}
+                    <button
+                        onClick={handleScrollToPricing}
+                        className="text-m text-black hover:text-gray-600 hover:underline"
+                    >
                         Bảng giá
-                    </Link>
-                    <Link href="/" className="text-m text-black hover:text-gray-600 hover:underline">
+                    </button>
+                    <button
+                        onClick={handleScrollToFAQ}
+                        className="text-m text-black hover:text-gray-600 hover:underline"
+                    >
                         Câu hỏi thường gặp
-                    </Link>
+                    </button>
                     <Button className="bg-[#7C3AED] hover:bg-[#6D28D9]">
                         Đăng ký dùng thử
                     </Button>
@@ -47,10 +124,13 @@ export const Navbar = () => {
                         <Link href="/">Tính năng</Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                        <Link href="/">Bảng giá</Link>
+                        <button onClick={handleScrollToFeature}>Tính năng</button>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                        <Link href="/">Câu hỏi thường gặp</Link>
+                        <button onClick={handleScrollToPricing}>Bảng giá</button>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                        <button onClick={handleScrollToFAQ}>Câu hỏi thường gặp</button>
                     </DropdownMenuItem>
                     <DropdownMenuItem>
                         <Button className="w-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white">
@@ -59,6 +139,7 @@ export const Navbar = () => {
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
+        </div>
         </nav>
-    )
-}
+    );
+};

@@ -47,8 +47,8 @@ export const AllyFeatures = () => {
     ]
   
     return (
-      <section className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-center mb-12">Tính năng nổi bật của Ally AI</h2>
+      <section id="features" className="container mx-auto px-4 py-16">
+        <h2 className="text-4xl font-bold text-center mb-12">Tính năng nổi bật của Ally AI</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
           {features.map((feature, index) => (
             <Card key={index} className="h-full min-w-60 p-4 rounded-xl shadow-lg bg-white bg-opacity-20 backdrop-blur-md hover:bg-opacity-50 transition-all duration-300 border-none">

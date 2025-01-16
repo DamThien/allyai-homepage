@@ -58,7 +58,7 @@ export const Benefits = () => {
     }, [])
   
     return (
-      <section className="container mx-auto px-4 py-16">
+      <section className="container mx-auto px-4 py-16 h-[100vh] max-sm:h-fit flex center">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 sm:col-start-1">
             <div className="space-y-4">

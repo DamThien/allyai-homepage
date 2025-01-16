@@ -103,7 +103,7 @@ export const Chat = () => {
   }
 
   return (
-    <div className="flex flex-col max-sm:h-[100vh] overflow-hidden lg:h-[55vh] bg-background rounded-[15px]">
+    <div className="flex flex-col max-sm:h-[100vh] overflow-hidden lg:h-[70vh] bg-background rounded-[15px]">
       {/* Header */}
       <header className="flex items-center justify-between px-4 py-2 border-b">
         <div className="flex items-center gap-2">

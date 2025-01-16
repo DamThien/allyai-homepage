@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Facebook, Instagram } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
@@ -21,7 +21,7 @@ export const LandingFormFooterComponent = () => {
       {/* Navigation Grid */}
       <div className="border-t border-slate-800">
         <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {/* Logo */}
             <div className="lg:col-span-1">
               <Link href="/" className="text-2xl font-bold">
@@ -31,9 +31,9 @@ export const LandingFormFooterComponent = () => {
 
             {/* Product */}
             <div className="space-y-4">
-              <h3 className="font-semibold text-lg">Product</h3>
+              <h3 className="font-semibold text-lg">Về Chúng Tôi</h3>
               <ul className="space-y-2">
-                {['Visual Editor', 'CMS', 'A/B Testing', 'Insights', 'Personalization', 'Keyword Research', 'Page Analytics', 'Product Updates', 'Pricing'].map((item) => (
+                {['Ally AI là nền tảng AI hàng đầu để xây dựng agent AI bán hàng.'].map((item) => (
                   <li key={item}>
                     <Link href="#" className="text-slate-300 hover:text-white transition-colors">
                       {item}
@@ -45,9 +45,9 @@ export const LandingFormFooterComponent = () => {
 
             {/* Shogun For */}
             <div className="space-y-4">
-              <h3 className="font-semibold text-lg">Shogun For</h3>
+              <h3 className="font-semibold text-lg">Liên Hệ Chúng Tôi</h3>
               <ul className="space-y-2">
-                {['Ecommerce Managers', 'Ecommerce Agencies', 'Fashion & Apparel Brands', 'BigCommerce'].map((item) => (
+                {['info@allyai.ai','092 885 3399','Cộng Đồng Discord'].map((item) => (
                   <li key={item}>
                     <Link href="#" className="text-slate-300 hover:text-white transition-colors">
                       {item}
@@ -57,47 +57,37 @@ export const LandingFormFooterComponent = () => {
               </ul>
             </div>
 
-            {/* Capabilities */}
+            {/* Quick links */}
             <div className="space-y-4">
-              <h3 className="font-semibold text-lg">Capabilities</h3>
+              <h3 className="font-semibold text-lg">Liên Kết Nhanh</h3>
               <ul className="space-y-2">
-                {['Content Management', 'Multi-store Expansion', 'Visual Merchandising', 'SEO', 'Paid Campaigns', 'Ecommerce Landing Pages', 'AI Website Builder'].map((item) => (
-                  <li key={item}>
-                    <Link href="#" className="text-slate-300 hover:text-white transition-colors">
-                      {item}
+                {[
+                  { text: 'Điều khoản', url: '/terms' },
+                  { text: 'Chính sách', url: '/policy' }
+                ].map((item) => (
+                  <li key={item.text}>
+                  <Link href={item.url} className="text-slate-300 hover:text-white transition-colors">
+                    {item.text}
+                  </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Socials */}
+            <div className="space-y-4">
+              <h3 className="font-semibold text-lg">Theo dõi chúng tôi tại</h3>
+              <ul className="flex items-center gap-2 flex-row">
+                {[{ name: 'Facebook', icon: Facebook }, { name: 'Instagram', icon: Instagram }].map((item) => (
+                  <li key={item.name}>
+                    <Link href="#" className="text-slate-300 hover:text-white transition-colors flex items-center">
+                      <item.icon className="mr-3" color="white" />
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Resources */}
-            <div className="space-y-4">
-              <h3 className="font-semibold text-lg">Resources</h3>
-              <ul className="space-y-2">
-                {['Case Studies', 'Blog', 'A/B Testing Guide', 'CRO Guide', 'Personalization Guide', 'Personalization Use Cases', 'A/B Testing Use Cases', 'Partner Portal', 'Help Center'].map((item) => (
-                  <li key={item}>
-                    <Link href="#" className="text-slate-300 hover:text-white transition-colors">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Company */}
-            <div className="space-y-4">
-              <h3 className="font-semibold text-lg">Company</h3>
-              <ul className="space-y-2">
-                {['About Us', 'Become a Partner', 'Careers', 'Contact Us'].map((item) => (
-                  <li key={item}>
-                    <Link href="#" className="text-slate-300 hover:text-white transition-colors">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </div>
       </div>
