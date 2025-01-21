@@ -47,7 +47,7 @@ export const LandingFormFooterComponent = () => {
             <div className="space-y-4">
               <h3 className="font-semibold text-lg">Liên Hệ Chúng Tôi</h3>
               <ul className="space-y-2">
-                {['info@allyai.ai','092 885 3399','Cộng Đồng Discord'].map((item) => (
+                {['hai@allyai.ai','0935 479 122'].map((item) => (
                   <li key={item}>
                     <Link href="#" className="text-slate-300 hover:text-white transition-colors">
                       {item}

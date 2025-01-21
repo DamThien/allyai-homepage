@@ -122,11 +122,11 @@
     @apply border-border;
   }
 
-  .landing-page-bg {
+  /* .landing-page-bg {
     background: radial-gradient(at top right, #c0d4ec, transparent 80%),
       radial-gradient(at top left, #c1f0e5, transparent 50%),
       radial-gradient(at bottom right, #83b6e2, transparent 70%),
       radial-gradient(at bottom left, #66e4dd, transparent 100%);
     background-size: 100vw 100%;
-  }
+  } */
 }

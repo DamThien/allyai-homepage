@@ -104,7 +104,9 @@ export const Navbar: FC = () => {
                         Câu hỏi thường gặp
                     </button>
                     <Button className="bg-[#7C3AED] hover:bg-[#6D28D9]">
-                        Đăng ký dùng thử
+                        <Link href={"https://dev.allyai.ai/vi/sign-up"}>
+                            Đăng ký dùng thử
+                        </Link>
                     </Button>
                 </div>
             </div>
