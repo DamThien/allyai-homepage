@@ -136,7 +136,9 @@ export const Navbar: FC = () => {
                     </DropdownMenuItem>
                     <DropdownMenuItem>
                         <Button className="w-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white">
-                            Đăng ký dùng thử
+                            <Link href={"https://dev.allyai.ai/vi/sign-up"}>
+                                Đăng ký dùng thử
+                            </Link>
                         </Button>
                     </DropdownMenuItem>
                 </DropdownMenuContent>

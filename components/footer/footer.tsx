@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, Facebook, Instagram } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
@@ -78,13 +78,16 @@ export const LandingFormFooterComponent = () => {
             <div className="space-y-4">
               <h3 className="font-semibold text-lg">Theo dõi chúng tôi tại</h3>
               <ul className="flex items-center gap-2 flex-row">
-                {[{ name: 'Facebook', icon: Facebook }, { name: 'Instagram', icon: Instagram }].map((item) => (
+                {/* {[{ name: 'Facebook', icon: Facebook }, { name: 'Instagram', icon: Instagram }].map((item) => (
                   <li key={item.name}>
                     <Link href="#" className="text-slate-300 hover:text-white transition-colors flex items-center">
                       <item.icon className="mr-3" color="white" />
                     </Link>
                   </li>
-                ))}
+                ))} */}
+                    <Link href="https://zalo.me/1663388634589919644" className="text-slate-300 hover:text-white transition-colors flex items-center">
+                      <Image src="/logo/zalo-logo.png" alt="Zalo Logo" width={35} height={35} />
+                    </Link>
               </ul>
             </div>
 

@@ -8,76 +8,62 @@ export const PricingTable = () => {
   
     const plans = [
       {
-        name: "FREE",
-        price: "$0",
+        name: "Basic",
+        priceMonthly: "499.000 đ/ tháng",
+        priceYearly: "4.788.000 đ/ năm",
         features: [
-          "GPT-3.5-Turbo LLM",
-          "30 message credits",
-          "1 chatbot",
-          "200,000 characters per chatbot",
-          "Embed on unlimited websites",
-          "Upload multiple files"
+          "1,000,000 credit",
+          "Hỗ trợ kỹ thuật: Document",
+          "Dữ liệu lưu trữ: 1GB",
+          "Nhật ký lịch sử: 3 tháng",
+          "Số lượng AI tạo ra: 3",
+          "Số lượng page tích hợp: 1",
+          "Số lượng phần mềm CRM tích hợp: không hỗ trợ",
+          "Chi phí khởi tạo: Miễn phí"
         ],
-        buttonText: "Current Plan",
+        buttonText: "Chọn gói",
         color: "#c0d4ec"
       },
       {
-        name: "ENTRY",
-        price: "$30",
+        name: "Advance",
+        priceMonthly: "1.999.000 đ/ tháng",
+        priceYearly: "19.188.000 đ/ năm",
         features: [
-          "GPT-4 LLM",
-          "2,000 message credits",
-          "3 chatbot",
-          "800,000 characters per chatbot"
+          "5,000,000 credit",
+          "Hỗ trợ kỹ thuật: Video, Document, Google Meet",
+          "Dữ liệu lưu trữ: 10GB",
+          "Nhật ký lịch sử: Không giới hạn",
+          "Số lượng AI tạo ra: Không giới hạn",
+          "Số lượng page tích hợp: 10",
+          "Số lượng phần mềm CRM tích hợp: 1",
+          "Chi phí khởi tạo: Miễn phí"
         ],
-        extraFeatures: [
-          "Upload websites",
-          "Voice to text",
-          "Save conversations",
-          "Share conversations",
-          "Edit knowledge base"
-        ],
-        buttonText: "1 month free trial",
+        buttonText: "Dùng thử",
         color: "#c1f0e5"
       },
       {
-        name: "PREMIUM",
-        price: "$90",
-        popular: true,
+        name: "Customs",
+        priceMonthly: "Liên hệ",
+        priceYearly: "Liên hệ",
         features: [
-          "GPT-4 LLM",
-          "6,000 message credits",
-          "5 chatbot",
-          "2,000,000 characters per chatbot"
+          "Credit: Không giới hạn",
+          "Hỗ trợ kỹ thuật qua đội ngũ chuyên gia 24/7",
+          "Dữ liệu lưu trữ: Tùy chỉnh theo nhu cầu",
+          "Nhật ký lịch sử: Không giới hạn",
+          "Số lượng AI tạo ra: Không giới hạn",
+          "Số lượng page tích hợp: Không giới hạn",
+          "Số lượng phần mềm CRM tích hợp: Tùy chỉnh theo yêu cầu",
+          "Tích hợp thêm các hệ thống quản lý doanh nghiệp (ERP, HRM, v.v.)",
+          "Chi phí khởi tạo: Thỏa thuận"
         ],
         extraFeatures: [
-          "Remove 'Powered by Ally AI'",
-          "Upload videos",
-          "Upload images",
-          "API Access",
-          "Chatbot white-labeling"
+          "Quyền lợi đặc biệt: Giải pháp tùy chỉnh theo nhu cầu doanh nghiệp"
         ],
-        buttonText: "1 month free trial",
-        color: "#83b6e2"
-      },
-      {
-        name: "ENTERPRISE",
-        price: "Contact",
-        features: [
-          "GPT-4 LLM",
-          "Unlimited mess credits",
-          "Unlimited chatbot",
-          "Unlimited characters per chatbot"
-        ],
-        extraFeatures: [
-          "Llama 2 and Falcon LLMs",
-          "Custom instance of white-labelled Ally AI application",
-          "Custom integrations"
-        ],
-        buttonText: "Contact Us",
+        buttonText: "Liên hệ ngay",
         color: "#66e4dd"
       }
-    ]
+    ];
+    
   
     return (
       <div id="pricing-table" className="flex flex-col px-4 w-full py-8 bg-white mt-12 item-center">
@@ -90,7 +76,7 @@ export const PricingTable = () => {
                 billingInterval === "monthly" ? "bg-primary text-primary-foreground" : ""
               }`}
             >
-              Monthly
+              Tháng
             </button>
             <button
               onClick={() => setBillingInterval("yearly")}
@@ -98,12 +84,12 @@ export const PricingTable = () => {
                 billingInterval === "yearly" ? "bg-primary text-primary-foreground" : ""
               }`}
             >
-              Yearly
+              Năm
             </button>
           </div>
         </div>
   
-        <div className="container self-center grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="container self-center grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-4">
           {plans.map((plan) => (
             <Card
               key={plan.name}
@@ -113,22 +99,12 @@ export const PricingTable = () => {
                 borderColor: plan.color
               }}
             >
-              {plan.popular && (
-                <div className="absolute -top-4 -right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                  Popular
-                </div>
-              )}
               <CardHeader className="pb-0">
                 <div className="flex justify-between items-start">
                   <div>
                     <h3 className="text-lg font-bold">{plan.name}</h3>
                     <div className="mt-2 flex items-baseline">
-                      <span className="text-3xl font-bold">{plan.price}</span>
-                      {plan.price !== "Contact" && (
-                        <span className="ml-1 text-sm text-muted-foreground">
-                          per {billingInterval === "monthly" ? "month" : "year"}
-                        </span>
-                      )}
+                      <span className="text-3xl font-bold">{billingInterval === "monthly" ? plan.priceMonthly : plan.priceYearly}</span>
                     </div>
                   </div>
                 </div>

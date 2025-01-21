@@ -24,23 +24,23 @@ interface Message {
 const defaultMessages: Message[] = [
   {
     id: '1',
-    content: 'What can I help with?',
+    content: 'Bạn cần giúp gì không?',
     sender: 'bot',
     timestamp: new Date()
   },
   {
     id: '2', 
-    content: 'You can ask me anything! Here are some suggestions:',
+    content: 'Hỏi bất kỳ điều gì! Một vài gợi ý cho bạn:',
     sender: 'bot',
     timestamp: new Date()
   }
 ]
 
 const quickActions = [
-  { icon: '🎨', label: 'Create image' },
-  { icon: '📊', label: 'Analyze data' },
-  { icon: '💡', label: 'Get advice' },
-  { icon: '📝', label: 'Make a plan' }
+  { icon: '🎨', label: 'Ally AI là gì?' },
+  { icon: '📊', label: 'AI bán hàng là gì?' },
+  { icon: '💡', label: 'Các giải pháp chúng tôi có' },
+  { icon: '📝', label: 'Tạo ngay một kế hoạch ' }
 ]
 
 export const Chat = () => {
@@ -89,7 +89,7 @@ export const Chat = () => {
     setTimeout(() => {
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: `I understand your message: "${input}". How can I help you further?`,
+        content: `Tôi hiểu tin nhắn của bạn: "${input}". Tôi có thể giúp gì thêm cho bạn?`,
         sender: 'bot',
         timestamp: new Date()
       }

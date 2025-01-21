@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { Chat } from "./chat";
 import { Navbar } from "./navbar";
 import Image from "next/image";
+import Link from "next/link";
 
 export const LandingFormHeaderComponent = () => {
     const gradientTextRef = useRef<HTMLSpanElement>(null)
@@ -69,11 +70,11 @@ export const LandingFormHeaderComponent = () => {
     return (
         <div className="w-full h-[100vh] max-sm:h-fit flex justify-center px-4">
             <div className="absolute w-full h-[92vh] top-[8vh]">
-                <Image 
-                    src="/images/ai-sales-agent.jpeg" 
-                    alt="background" 
-                    className="object-cover object-top opacity-40" 
-                    layout="fill" 
+                <Image
+                    src="/images/ai-sales-agent.jpeg"
+                    alt="background"
+                    className="object-cover object-top opacity-40"
+                    layout="fill"
                 />
             </div>
             <div className="container flex flex-col">
@@ -96,11 +97,13 @@ export const LandingFormHeaderComponent = () => {
                                 <br />Tích hợp đa kênh, giúp tăng trưởng doanh số vượt trội.
                             </p>
                             <div className="grid item-center sm:justify-center lg:justify-start sm:grid sm:grid-cols-2 gap-8">
-                                <Button
-                                    className="px-6 py-6 text-xs uppercase tracking-widest font-bold text-black bg-white border-none rounded-[45px] shadow-md transition-all duration-300 ease-out hover:bg-[#6D28D9] hover:shadow-lg hover:text-white hover:-translate-y-1 active:-translate-y-[1px] focus:outline-none"
-                                >
-                                    Tạo ngay trợ lý cho bạn
-                                </Button>
+                                <Link href={"https://dev.allyai.ai/vi/sign-up"}>
+                                    <Button
+                                        className="px-6 py-6 text-xs uppercase tracking-widest font-bold text-black bg-white border-none rounded-[45px] shadow-md transition-all duration-300 ease-out hover:bg-[#6D28D9] hover:shadow-lg hover:text-white hover:-translate-y-1 active:-translate-y-[1px] focus:outline-none"
+                                    >
+                                        Tạo ngay trợ lý cho bạn
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                         {/* <ChatInterface /> */}
