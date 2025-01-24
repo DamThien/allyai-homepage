@@ -4,6 +4,7 @@ import { StatsSection } from "./stats-section";
 import { ProcessFlow } from "./process-flow";
 import { PricingTable } from "./pricingtable";
 import { FAQ } from "./faq";
+import { VerticalAIMarketplace } from "./ventical-ai-marketplace";
 
 
 export const LandingFormBodyComponent = () => {
@@ -11,6 +12,7 @@ export const LandingFormBodyComponent = () => {
         <div className="w-full">
             <Benefits/>
             <AllyFeatures/>
+            <VerticalAIMarketplace/>
             <StatsSection/>
             <ProcessFlow/>
             <PricingTable/>

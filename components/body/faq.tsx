@@ -35,7 +35,7 @@ const faqs = [
     return (
       <div id="faq" className=" flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl w-full">
-          <h1 className="text-4xl font-semibold mb-8 text-center">
+          <h1 className="text-4xl font-bold mb-8 text-center">
             Câu Hỏi Thường Gặp
           </h1>
           <div className="space-y-4">

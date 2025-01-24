@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Crown } from 'lucide-react'
 import { CardHeader, Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -38,7 +38,7 @@ export const PricingTable = () => {
           "Số lượng phần mềm CRM tích hợp: 1",
           "Chi phí khởi tạo: Miễn phí"
         ],
-        buttonText: "Dùng thử",
+        buttonText: "Chọn gói",
         color: "#c1f0e5"
       },
       {
@@ -63,8 +63,18 @@ export const PricingTable = () => {
         color: "#66e4dd"
       }
     ];
-    
-  
+
+  const [isShaking, setIsShaking] = useState(false)
+
+  useEffect(() => {
+    const shakeInterval = setInterval(() => {
+      setIsShaking(true)
+      setTimeout(() => setIsShaking(false), 1000) // Stop shaking after 1 second
+    }, 2000) // Trigger shake every 5 seconds
+
+    return () => clearInterval(shakeInterval)
+  }, [])
+
     return (
       <div id="pricing-table" className="flex flex-col px-4 w-full py-8 bg-white mt-12 item-center">
         <div className="text-center mb-12">
@@ -80,11 +90,16 @@ export const PricingTable = () => {
             </button>
             <button
               onClick={() => setBillingInterval("yearly")}
-              className={`rounded-full px-4 py-2 text-sm transition-colors ${
+              className={`rounded-full px-4 py-2 text-sm transition-colors relative ${
                 billingInterval === "yearly" ? "bg-primary text-primary-foreground" : ""
               }`}
             >
               Năm
+            <span className={`absolute -top-2 left-[100%] transition-all -translate-x-1/2 px-2 py-0.5 text-xs font-semibold bg-red-500 text-white rounded-full shadow-sm ${
+            isShaking ? "animate-shake scale-[200%]" : "scale-100"
+          }`}>
+              -5%
+            </span>
             </button>
           </div>
         </div>

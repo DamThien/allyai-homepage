@@ -38,9 +38,9 @@ const defaultMessages: Message[] = [
 
 const quickActions = [
   { icon: '🎨', label: 'Ally AI là gì?' },
-  { icon: '📊', label: 'AI bán hàng là gì?' },
-  { icon: '💡', label: 'Các giải pháp chúng tôi có' },
-  { icon: '📝', label: 'Tạo ngay một kế hoạch ' }
+  { icon: '📊', label: 'Bảng giá?' },
+  { icon: '💡', label: 'Đăng ký tư vấn' },
+  { icon: '📝', label: 'Dùng thử' }
 ]
 
 export const Chat = () => {

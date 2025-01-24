@@ -12,10 +12,12 @@ export const LandingFormFooterComponent = () => {
         <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
             Hãy để Ally AI đồng hành cùng bạn trong hành trình chinh phục khách hàng và tối ưu hóa doanh số. Đăng ký ngay để dùng thử miễn phí!
         </p>
-        <Button variant="outline" className="bg-transparent text-white hover:bg-white hover:text-slate-950">
-          Dùng thử miễn phí!
-          <ArrowRight className="ml-2 h-4 w-4" />
-        </Button>
+        <Link href={"https://dev.allyai.ai/vi/sign-up"}>
+          <Button variant="outline" className="bg-transparent text-white hover:bg-white hover:text-slate-950">
+            Dùng thử miễn phí!
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </Link>
       </div>
 
       {/* Navigation Grid */}
